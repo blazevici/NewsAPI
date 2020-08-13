@@ -1,0 +1,33 @@
+@media screen and (max-width: 1600px) {
+    .resetka {
+        grid-template-columns: 150px 50px auto 50px 150px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .resetka {
+        grid-template-columns: 50px auto 50px;
+    }
+
+    .stupac {
+        grid-column-start: 2;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .resetka {
+        grid-template-columns: 30px auto 30px;
+    }
+
+    .stupac {
+        grid-column-start: 2;
+    }
+
+    .vijesti {
+        grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content);
+    }
+
+    .tekst-clanka {
+        grid-column-start: 1;
+    }
+}

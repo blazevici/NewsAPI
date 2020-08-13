@@ -1,0 +1,109 @@
+:root {
+    --primary-color: #F2F2F2;
+    --font-color: #4A4A4A;
+    --bg-color: #FFFFFF;
+    --secondary-font-color: #494949;
+    --placeholder-color: #c7c7c7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: var(--font-color);
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: 'Martel Sans', sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.resetka {
+    display: grid;
+    grid-template-columns: 400px 20px auto 20px 400px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.stupac {
+    grid-column: 3;
+    width: 100%;
+    margin: auto;
+}
+
+.naslov {
+    text-align: left;
+    grid-row: 1;
+    margin: 24px 0 12px 0;
+}
+
+.pretrazivanje {
+    grid-row: 2;
+    border: 1px solid var(--font-color);
+    border-radius: 3px;
+    margin: 12px 0 12px 0;
+}
+
+.vijesti {
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: minmax(100px, max-content) minmax(min-content, max-content);
+    border-radius: 3px;
+    margin: 24px 0 24px 0;
+    background-color: var(--primary-color);
+}
+
+.slika-clanka {
+    grid-column-start: 1;
+    display: inherit;
+}
+
+.slika-clanka > img {
+    border-radius: 3px;
+}
+
+.tekst-clanka {
+    grid-column-start: 2;
+}
+
+.tekst-clanka > h2, p, a {
+    padding: 0 24px 0 24px;
+}
+
+h1 {
+    font-weight: 900;
+    margin: 0;
+}
+
+.input-pretrazi {
+    border: none;
+    padding: 16px;
+    width: 90%;
+}
+
+.input-pretrazi::placeholder {
+    color: var(--placeholder-color);
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+.dugme-pretrazi {
+    float: right;
+    border: none;
+    padding: 12px 18px 12px 18px;
+}
+
+.dugme-pretrazi:hover {
+    cursor: pointer;
+}
