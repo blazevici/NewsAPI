@@ -13,31 +13,24 @@
 
     <title>NewsAPI</title>
     </head>
-    <body class="resetka">
 
-    <div class="stupac-lijeva-strelica">
-        <img class="strelica" src="Asseti/left-arrow.svg" width="20px">
+    <body>
+
+
+    <div class="naslov">
+        <h1>Pretraži vijesti</h1>
     </div>
 
-    <div class="stupac-desna-strelica">
-        <img class="strelica" src="Asseti/right-arrow.svg" width="20px">
+    <div class="pretrazivanje">
+        <form action="">
+            <input class="input-pretrazi" type="text" placeholder="Pretraži" name="search">
+            <button class="dugme-pretrazi"><img src="Asseti/search.svg"></button>
+        </form>
     </div>
 
-    <div class="stupac">
-
-        <div class="naslov">
-            <h1>Pretraži vijesti</h1>
-        </div>
-
-        <div class="pretrazivanje">
-            <form action="">
-                <input class="input-pretrazi" type="text" placeholder="Pretraži" name="search">
-                <button class="dugme-pretrazi"><img src="Asseti/search.svg"></button>
-            </form>
-        </div>
-
-        <div class="carousel-vanjski">
-            <div class="carousel-unutarnji">
+    <div class="carousel-vanjski">
+        <ul class="carousel tranzicija">
+            <li class="artikl">
                 <div class="vijesti">
                     <div class="slika-clanka">
                         <img src="Asseti/Placeholder.jpg">
@@ -46,19 +39,117 @@
                     <div class="tekst-clanka">
                         <h2>Novi član Virovitičkih ribnjaka</h2>
                         <p>Autor: Danijel Popović</p>
-                        <br>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </p>
-                        <br>
+                        <a href="#">Pročitaj cijeli članak</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="artikl">
+                <div class="vijesti">
+                    <div class="slika-clanka">
+                        <img src="Asseti/Placeholder.jpg">
+                    </div>
+                    
+                    <div class="tekst-clanka">
+                        <h2>Novi član Virovitičkih ribnjaka 2</h2>
+                        <p>Autor: Danijel Popović</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                        <a href="#">Pročitaj cijeli članak</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="artikl ref">
+                <div class="vijesti">
+                    <div class="slika-clanka">
+                        <img src="Asseti/Placeholder.jpg">
+                    </div>
+                    
+                    <div class="tekst-clanka">
+                        <h2>Novi član Virovitičkih ribnjaka 3</h2>
+                        <p>Autor: Danijel Popović</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                        <a href="#">Pročitaj cijeli članak</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+    <!--<div class="carousel-vanjski">
+        <div class="carousel-unutarnji">
+                
+            
+
+            <div class="container-vijesti">
+                <div class="vijesti">
+                    <div class="slika-clanka">
+                        <img src="Asseti/Placeholder.jpg">
+                    </div>
+                    
+                    <div class="tekst-clanka">
+                        <h2>Novi član Virovitičkih ribnjaka</h2>
+                        <p id="autor">Autor: Danijel Popović</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
                         <a href="#">Pročitaj cijeli članak</a>
                     </div>
                 </div>
             </div>
+
+            <div class="container-vijesti">
+                <div class="vijesti">
+                    <div class="slika-clanka">
+                        <img src="Asseti/Placeholder.jpg">
+                    </div>
+                    
+                    <div class="tekst-clanka">
+                        <h2>Novi član Virovitičkih ribnjaka 2</h2>
+                        <p id="autor">Autor: Danijel Popović</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                        <a href="#">Pročitaj cijeli članak</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-vijesti ref">
+                <div class="vijesti">
+                    <div class="slika-clanka">
+                        <img src="Asseti/Placeholder.jpg">
+                    </div>
+                    
+                    <div class="tekst-clanka">
+                        <h2>Novi član Virovitičkih ribnjaka 3</h2>
+                        <p id="autor">Autor: Danijel Popović</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                        <a href="#">Pročitaj cijeli članak</a>
+                    </div>
+                </div>
+            </div>
+
+            
         </div>
-        
-        
-        
+    </div>-->
+
+    <div class="lijeva-strelica">
+        <img class="strelica" src="Asseti/left-arrow.svg" width="20px" id="lijevo">
+    </div>
+
+    <div class="desna-strelica">
+        <img class="strelica" data-toggle="sljedeca" src="Asseti/right-arrow.svg" width="20px" id="desno">
     </div>
 
     <!-- skripte -->
