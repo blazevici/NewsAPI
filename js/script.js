@@ -1,34 +1,71 @@
 $(document).ready(function() {
 
-    var url = 'http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=1f3f0b7114fa4017be914ae300d76797';
-    var req = new Request(url);
-    fetch(req).then(response => 
-        response.json().then(data => ({
-            data: data,
-            status: response.status
-        })
-    ).then(res => {
-        //console.log(res.status, res.data.articles[0]);
+    $('#forma').submit(function(e) {
+        e.preventDefault();
 
-        for (i = 0; i < 5; i++) {
-            var clanak = res.data.articles[i];
+        var pojam = $('#kljucna-rijec').val();
+        document.getElementById("clanci").innerHTML = "";
 
-            if (clanak.urlToImage) {
-                var slika_clanka = clanak.urlToImage;
-            } else {
-                var slika_clanka = "Asseti/Placeholder.jpg";
-            }
+        var danas = new Date();
+        var datum = danas.getFullYear()+'-'+(danas.getMonth()+1)+'-'+danas.getDate();
 
-            if (i == 4) {
-                var html = '<li class="artikl ref"><div class="vijesti"><div class="slika-clanka"><img width="320px" src="'+ slika_clanka +'"></div><div class="tekst-clanka"><h2>'+ clanak.title +'</h2><p>Autor: '+ clanak.author +'</p><p>'+ clanak.description +'</p><a target="_blank" href="'+ clanak.url +'">Pročitaj cijeli članak</a></div></div></li>';
-            } else {
-                var html = '<li class="artikl"><div class="vijesti"><div class="slika-clanka"><img width="320px" src="'+ clanak.urlToImage +'"></div><div class="tekst-clanka"><h2>'+ clanak.title +'</h2><p>Autor: '+ clanak.author +'</p><p>'+ clanak.description +'</p><a target="_blank" href="'+ clanak.url +'">Pročitaj cijeli članak</a></div></div></li>';
+        var url = 'http://newsapi.org/v2/everything?' +
+          'q='+ pojam +'&' +
+          'from='+ datum +'&' +
+          'sortBy=popularity&' +
+          'apiKey=1f3f0b7114fa4017be914ae300d76797';
+        var req = new Request(url);
+        fetch(req).then(response => 
+            response.json().then(data => ({
+                data: data,
+                status: response.status
+            })
+        ).then(res => {
+
+            for (i = 0; i < 5; i++) {
+                var clanak = res.data.articles[i];
+
+                //console.log(res.data.articles[i]);
+
+                if (clanak.title) {
+                    var naslov = clanak.title;
+                } else {
+                    var naslov = "Nema naslova";
+                }
+
+                if (clanak.urlToImage) {
+                    var slika_clanka = clanak.urlToImage;
+                } else {
+                    var slika_clanka = "Asseti/Placeholder.jpg";
+                }
+
+                if (clanak.author) {
+                    var autor = clanak.author;
+                } else {
+                    var autor = "Nepoznat";
+                }
+
+                if (clanak.description) {
+                    var opis = clanak.description.replace(/<(.|\n)*?>/g, '');
+                } else {
+                    var opis = "Nema opisa";
+                }
+
+                if (i == 4) {
+                    var html = '<li class="artikl ref"><div class="vijesti"><div class="slika-clanka"><img width="320px" src="'+ slika_clanka +'"></div><div class="tekst-clanka"><h2>'+ naslov +'</h2><p>Autor: '+ autor +'</p><p>'+ opis +'</p><a target="_blank" href="'+ clanak.url +'">Pročitaj cijeli članak</a></div></div></li>';
+                } else {
+                    var html = '<li class="artikl"><div class="vijesti"><div class="slika-clanka"><img width="320px" src="'+ slika_clanka +'"></div><div class="tekst-clanka"><h2>'+ naslov +'</h2><p>Autor: '+ autor +'</p><p>'+ opis +'</p><a target="_blank" href="'+ clanak.url +'">Pročitaj cijeli članak</a></div></div></li>';
+                }
+                
+                document.getElementById("clanci").innerHTML += html;
             }
             
-            document.getElementById("clanci").innerHTML += html;
-        }
-        
-    }));
+            document.getElementById("lijevo").style.display = "block";
+            document.getElementById("desno").style.display = "block";
+        }));
+    });
+
+    
     
 
     $('.strelica').on('click', function(strelica) {

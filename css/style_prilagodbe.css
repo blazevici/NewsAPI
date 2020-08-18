@@ -1,12 +1,10 @@
 @media screen and (max-width: 1400px) {
     body {
-        font-size: 1.1em !important;
+        font-size: 1.2em !important;
     }
-}
 
-@media screen and (max-width: 1200px) {
-    body {
-        font-size: 1.15em !important;
+    .tekst-clanka > h2, p, a {
+        padding: 0 0px 0 36px;
     }
 
     .tekst-clanka > a {
@@ -15,12 +13,36 @@
 
     h2 {
         padding-top: 0 !important;
+        font-size: 1.2em !important;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    body {
+        font-size: 1.3em !important;
+    }
+
+    .tekst-clanka > a {
+        position: static;
+    }
+
+    h2 {
+        padding-top: 0 !important;
+        font-size: 1.3em !important
+    }
+
+    .artikl {
+        padding-top: 5rem;
     }
 }
 
 @media screen and (max-width: 800px) {
     body {
-        font-size: 1.4em !important;
+        font-size: 1.5em !important;
+    }
+
+    h2 {
+        font-size: 1.5em !important;
     }
 
     .vijesti {
@@ -28,7 +50,7 @@
     }
 
     .artikl {
-        padding-top: 17rem;
+        padding-top: 20rem;
     }
 
     .slika-clanka > img {
@@ -38,5 +60,19 @@
 
     .lijeva-strelica, .desna-strelica {
         padding-top: 12rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 2em !important;
+    }
+
+    h2 {
+        font-size: 2em !important;
+    }
+
+    .artikl {
+        padding-top: 50rem;
     }
 }

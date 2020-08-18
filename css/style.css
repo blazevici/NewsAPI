@@ -37,7 +37,7 @@ p {
     display: grid;
     grid-template-columns: auto 70px 48rem 70px auto;
     grid-template-rows: 50px 50px 500px;
-    grid-gap: 10px 0;
+    grid-gap: 20px 0;
     align-items: center;
 }
 
@@ -61,6 +61,7 @@ p {
     z-index: 3;
     text-align: center;
     padding-top: 4rem;
+    display: none;
 }
 
 .carousel-vanjski {
@@ -128,6 +129,7 @@ p {
     grid-row: 2;
     border: 1px solid var(--font-color);
     border-radius: 3px;
+    z-index: 3;
 }
 
 .vijesti {
@@ -173,6 +175,7 @@ h2 {
 .input-pretrazi {
     border: none;
     padding: 16px;
+    width: 90%;
 }
 
 .input-pretrazi::placeholder {
