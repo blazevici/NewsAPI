@@ -12,11 +12,12 @@
 
 body {
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 6rem 0 0 0 !important;
     background-color: var(--bg-color);
     color: var(--font-color);
     font-family: 'Martel Sans', sans-serif;
     width: 100%;
+    height: 100vh;
     overflow-x: hidden;
 }
 
@@ -34,8 +35,10 @@ p {
 
 .resetka {
     display: grid;
-    grid-template-columns: 400px 50px auto 50px 400px;
+    grid-template-columns: auto 50px 48rem 50px auto;
     grid-template-rows: 50px 50px 500px;
+    grid-gap: 10px 0;
+    align-items: center;
 }
 
 .stupac {
@@ -44,7 +47,25 @@ p {
     margin: auto;
 }
 
+.lijeva-strelica {
+    grid-column: 2;
+    grid-row: 1 / 4; 
+}
+
+.desna-strelica {
+    grid-column: 4;
+    grid-row: 1 / 4; 
+}
+
+.lijeva-strelica, .desna-strelica {
+    z-index: 3;
+    text-align: center;
+    padding-top: 4rem;
+}
+
 .carousel-vanjski {
+    grid-column: 1 / 6;
+    grid-row: 3;
     overflow: hidden;
 }
 
@@ -98,25 +119,20 @@ p {
 }
 
 .naslov {
-    max-width: 48rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 6rem;
+    grid-column: 3;
+    grid-row: 1;
 }
 
 .pretrazivanje {
+    grid-column: 3;
+    grid-row: 2;
     border: 1px solid var(--font-color);
     border-radius: 3px;
-    max-width: 48rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1rem;
 }
 
 .vijesti {
     display: flex;
     white-space: normal;
-    min-width: 48rem;
     max-width: 48rem;
     margin-left: auto;
     margin-right: auto;
@@ -141,11 +157,11 @@ h1 {
 .input-pretrazi {
     border: none;
     padding: 16px;
-    width: 90%;
 }
 
 .input-pretrazi::placeholder {
     color: var(--placeholder-color);
+    font-family: 'Martel Sans', sans-serif;
 }
 
 input:focus::placeholder {
@@ -155,15 +171,11 @@ input:focus::placeholder {
 .dugme-pretrazi {
     float: right;
     border: none;
-    padding: 12px 18px 12px 18px;
+    padding: 13px 18px 12px 18px;
 }
 
 .dugme-pretrazi:hover {
     cursor: pointer;
-}
-
-.lijeva-strelica, .desna-strelica {
-    display: inline-block;
 }
 
 .nevidljiv {
