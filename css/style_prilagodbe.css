@@ -1,23 +1,42 @@
-@media screen and (max-width: 1200px) {
-    
-    /*.carousel {
-        left: -50%;
-        transform: translateX(50%);
+@media screen and (max-width: 1400px) {
+    body {
+        font-size: 1.1em !important;
     }
-
-    .artikl {
-        flex-basis: 50%;
-    }*/
 }
 
-@media screen and (max-width: 900px) {
-    
-    /*.carousel {
-        left: -33.33333%;
-        transform: translateX(33.33333%)
+@media screen and (max-width: 1200px) {
+    body {
+        font-size: 1.15em !important;
+    }
+
+    .tekst-clanka > a {
+        position: static;
+    }
+
+    h2 {
+        padding-top: 0 !important;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        font-size: 1.4em !important;
+    }
+
+    .vijesti {
+        flex-wrap: wrap;
     }
 
     .artikl {
-        flex-basis: 33.33333%
-    }*/
+        padding-top: 17rem;
+    }
+
+    .slika-clanka > img {
+        width: 768px;
+        height: 340px;
+    }
+
+    .lijeva-strelica, .desna-strelica {
+        padding-top: 12rem;
+    }
 }

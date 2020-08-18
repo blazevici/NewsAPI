@@ -8,7 +8,7 @@ $(document).ready(function() {
             status: response.status
         })
     ).then(res => {
-        console.log(res.status, res.data.articles[0]);
+        //console.log(res.status, res.data.articles[0]);
 
         for (i = 0; i < 5; i++) {
             var clanak = res.data.articles[i];
@@ -26,7 +26,6 @@ $(document).ready(function() {
             }
             
             document.getElementById("clanci").innerHTML += html;
-            console.log(html);
         }
         
     }));
@@ -67,10 +66,9 @@ $(document).ready(function() {
             nova_vijest = sljedeci(nova_vijest).css('order', i);
         }
 
-        carousel.removeClass('tranzicija');  // ANIMACIJA SE OVDJE DOGAĐA
+        carousel.removeClass('tranzicija');  // ANIMACIJA SE OVDJE KADA MIČEMO I PONOVNO DODAJEMO KLASU
         setTimeout (function() {
             carousel.addClass('tranzicija');
         }, 50);
     });
-
 });
