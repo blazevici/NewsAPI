@@ -143,6 +143,9 @@ p {
 .slika-clanka > img {
     border-radius: 3px;
     vertical-align: top;
+    width: 320px;
+    height: 460px;
+    object-fit: cover;
 }
 
 .tekst-clanka > h2, p, a {
