@@ -1,13 +1,13 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $('#forma').submit(function(e) {
+    $('#forma').submit(function (e) {
         e.preventDefault();
 
         var pojam = $('#kljucna-rijec').val();
         document.getElementById("clanci").innerHTML = "";
 
         var danas = new Date();
-        var datum = danas.getFullYear()+'-'+(danas.getMonth()+1)+'-'+danas.getDate();
+        var datum = danas.getFullYear() + '-' + (danas.getMonth() + 1) + '-' + danas.getDate();
 
         var url = 'http://newsapi.org/v2/everything?' +
           'q='+ pojam +'&' +
@@ -17,15 +17,11 @@ $(document).ready(function() {
         var req = new Request(url);
         fetch(req).then(response => 
             response.json().then(data => ({
-                data: data,
-                status: response.status
+                data: data
             })
         ).then(res => {
-
             for (i = 0; i < 5; i++) {
                 var clanak = res.data.articles[i];
-
-                //console.log(res.data.articles[i]);
 
                 if (clanak.title) {
                     var naslov = clanak.title;
@@ -46,7 +42,7 @@ $(document).ready(function() {
                 }
 
                 if (clanak.description) {
-                    var opis = clanak.description.replace(/<(.|\n)*?>/g, '');
+                    var opis = clanak.description.replace(/<(.|\n)*?>/g, ''); // u rijetkim slučajevima tekst je bio s html tagovima pa ih pomoću ovoga čistim jer zezne cijeli dizajn
                 } else {
                     var opis = "Nema opisa";
                 }
@@ -65,14 +61,11 @@ $(document).ready(function() {
         }));
     });
 
-    
-    
-
-    $('.strelica').on('click', function(strelica) {
+    $('.strelica').on('click', function (strelica) {
         var carousel = $('#clanci');
         var artikli = $('.artikl');
 
-        function sljedeci(element) {
+        function sljedeci (element) {
             if (element.next().length > 0) {
                 return element.next();
             } else {
@@ -80,7 +73,7 @@ $(document).ready(function() {
             }
         }
     
-        function prethodni(element) {
+        function prethodni (element) {
             if (element.prev().length > 0) {
                 return element.prev();
             } else {
@@ -103,8 +96,8 @@ $(document).ready(function() {
             nova_vijest = sljedeci(nova_vijest).css('order', i);
         }
 
-        carousel.removeClass('tranzicija');  // ANIMACIJA SE OVDJE KADA MIČEMO I PONOVNO DODAJEMO KLASU
-        setTimeout (function() {
+        carousel.removeClass('tranzicija');  // animacija se ovdje događa kada mičem i ponovno dodajem klasu
+        setTimeout (function () {
             carousel.addClass('tranzicija');
         }, 50);
     });

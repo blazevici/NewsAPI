@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- CSS style -->
+    <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/style_prilagodbe.css">
 
-    <!-- Google fonts -->
+    <!-- Google font -->
     <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;700;900&display=swap" rel="stylesheet">
 
     <title>NewsAPI</title>
@@ -16,32 +16,31 @@
 
     <body class="resetka">
 
+        <div class="naslov">
+            <h1>Pretraži vijesti</h1>
+        </div>
 
-    <div class="naslov">
-        <h1>Pretraži vijesti</h1>
-    </div>
+        <div class="pretrazivanje">
+            <form action="" id="forma">
+                <input class="input-pretrazi" id="kljucna-rijec" type="text" placeholder="Pretraži" name="input-pretrazi">
+                <button id="pretrazi" class="dugme-pretrazi"><img src="Asseti/search.svg"></button>
+            </form>
+        </div>
 
-    <div class="pretrazivanje">
-        <form action="" id="forma">
-            <input class="input-pretrazi" id="kljucna-rijec" type="text" placeholder="Pretraži" name="input-pretrazi">
-            <button id="pretrazi" class="dugme-pretrazi"><img src="Asseti/search.svg"></button>
-        </form>
-    </div>
+        <div class="carousel-vanjski">
+            <ul class="carousel tranzicija" id="clanci">
+                
+            </ul>
 
-    <div class="carousel-vanjski">
-        <ul class="carousel tranzicija" id="clanci">
-            
-        </ul>
+        </div>
 
-    </div>
+        <div class="lijeva-strelica" id="lijevo">
+            <img class="strelica" src="Asseti/left-arrow.svg">
+        </div>
 
-    <div class="lijeva-strelica" id="lijevo">
-        <img class="strelica" src="Asseti/left-arrow.svg">
-    </div>
-
-    <div class="desna-strelica" id="desno">
-        <img class="strelica" data-toggle="sljedeca" src="Asseti/right-arrow.svg">
-    </div>
+        <div class="desna-strelica" id="desno">
+            <img class="strelica" data-toggle="sljedeca" src="Asseti/right-arrow.svg">
+        </div>
 
     <!-- skripte -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
