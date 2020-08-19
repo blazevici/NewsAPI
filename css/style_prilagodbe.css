@@ -1,78 +1,51 @@
-@media screen and (max-width: 1400px) {
-    body {
-        font-size: 1.2em !important;
-    }
-
-    .tekst-clanka > h2, p, a {
-        padding: 0 0px 0 36px;
-    }
-
-    .tekst-clanka > a {
-        position: static;
-    }
-
-    h2 {
-        padding-top: 0 !important;
-        font-size: 1.2em !important;
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    body {
-        font-size: 1.3em !important;
-    }
-
-    .tekst-clanka > a {
-        position: static;
-    }
-
-    h2 {
-        padding-top: 0 !important;
-        font-size: 1.3em !important
-    }
-
-    .artikl {
-        padding-top: 5rem;
-    }
-}
-
 @media screen and (max-width: 800px) {
     body {
-        font-size: 1.5em !important;
+        font-size: 2em;
     }
 
-    h2 {
-        font-size: 1.5em !important;
+    .resetka {
+        grid-template-columns: 70px 48rem 70px;
+        grid-template-rows: 100px 100px auto;
+    }
+
+    .lijeva-strelica {
+        grid-column: 1;
+    }
+
+    .desna-strelica {
+        grid-column: 3;
+    }
+
+    .lijeva-strelica, .desna-strelica {
+        padding-top: 24rem;
+    }
+
+    .strelica {
+        width: 40px;
+    }
+
+    .naslov, .pretrazivanje {
+        grid-column: 2;
+    }
+
+    .carousel-vanjski {
+        grid-column: 1 / 4;
+        padding-top: 40rem;
     }
 
     .vijesti {
         flex-wrap: wrap;
     }
 
-    .artikl {
-        padding-top: 20rem;
-    }
-
     .slika-clanka > img {
         width: 768px;
-        height: 340px;
     }
 
-    .lijeva-strelica, .desna-strelica {
-        padding-top: 12rem;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    body {
-        font-size: 2em !important;
+    .tekst-clanka > a {
+        position: static;
     }
 
-    h2 {
-        font-size: 2em !important;
-    }
-
-    .artikl {
-        padding-top: 50rem;
+    .dugme-pretrazi {
+        padding: 24px;
     }
 }

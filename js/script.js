@@ -60,8 +60,8 @@ $(document).ready(function() {
                 document.getElementById("clanci").innerHTML += html;
             }
             
-            document.getElementById("lijevo").style.display = "block";
-            document.getElementById("desno").style.display = "block";
+            document.getElementById("lijevo").style.visibility = "visible";
+            document.getElementById("desno").style.visibility = "visible";
         }));
     });
 
