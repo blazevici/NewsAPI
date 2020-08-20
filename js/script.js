@@ -11,7 +11,7 @@ $(document).ready(function () {
 
         var url = 'http://newsapi.org/v2/everything?' +
           'q='+ pojam +'&' +
-          'from='+ datum +'&' +
+          'from='+ datum + '&' +
           'sortBy=popularity&' +
           'apiKey=1f3f0b7114fa4017be914ae300d76797';
         var req = new Request(url);
