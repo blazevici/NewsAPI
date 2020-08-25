@@ -1,13 +1,33 @@
 $(document).ready(function () {
 
+    function dohvatiDatum () {
+        let danas = new Date();
+        return danas.getFullYear() + '-' + (danas.getMonth() + 1) + '-' + danas.getDate();
+    }
+
+    function sljedeci (element, artikli) {
+        if (element.next().length > 0) {
+            return element.next();
+        } else {
+            return artikli.first();
+        }
+    }
+
+    function prethodni (element, artikli) {
+        if (element.prev().length > 0) {
+            return element.prev();
+        } else {
+            return artikli.last();
+        }
+    }
+
     $('#forma').submit(function (e) {
         e.preventDefault();
 
         var pojam = $('#kljucna-rijec').val();
         document.getElementById("clanci").innerHTML = "";
 
-        var danas = new Date();
-        var datum = danas.getFullYear() + '-' + (danas.getMonth() + 1) + '-' + danas.getDate();
+        let datum = dohvatiDatum();
 
         var url = 'http://newsapi.org/v2/everything?' +
           'q='+ pojam +'&' +
@@ -20,7 +40,7 @@ $(document).ready(function () {
                 data: data
             })
         ).then(res => {
-            for (i = 0; i < 5; i++) {
+            for (let i = 0; i < 5; i++) {
                 var clanak = res.data.articles[i];
 
                 if (clanak.title) {
@@ -65,39 +85,23 @@ $(document).ready(function () {
         var carousel = $('#clanci');
         var artikli = $('.artikl');
 
-        function sljedeci (element) {
-            if (element.next().length > 0) {
-                return element.next();
-            } else {
-                return artikli.first();
-            }
-        }
-    
-        function prethodni (element) {
-            if (element.prev().length > 0) {
-                return element.prev();
-            } else {
-                return artikli.last();
-            }
-        }
-
         var el = $('.ref').removeClass('ref');
 
         if ($(strelica.currentTarget).data('toggle') == 'sljedeca') {
-            nova_vijest = sljedeci(el);
+            nova_vijest = sljedeci(el, artikli);
             carousel.removeClass('tranzicija-unatrag');
         } else {
-            nova_vijest = prethodni(el);
+            nova_vijest = prethodni(el, artikli);
             carousel.addClass('tranzicija-unatrag');
         }
 
         nova_vijest.addClass('ref').css('order', 1);
-        for (i = 2; i <= artikli.length; i++) {
-            nova_vijest = sljedeci(nova_vijest).css('order', i);
+        for (let i = 2; i <= artikli.length; i++) {
+            nova_vijest = sljedeci(nova_vijest, artikli).css('order', i);
         }
 
-        carousel.removeClass('tranzicija');  // animacija se ovdje događa kada mičem i ponovno dodajem klasu
-        setTimeout (function () {
+        carousel.removeClass('tranzicija');
+        setTimeout (() => {
             carousel.addClass('tranzicija');
         }, 50);
     });
